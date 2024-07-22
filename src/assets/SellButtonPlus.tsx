@@ -1,6 +1,6 @@
 import React  from 'react'
 
- export default function SellButtonPlus(params) {
+ export default function SellButtonPlus() {
     return(
         <svg
                 width="16px"

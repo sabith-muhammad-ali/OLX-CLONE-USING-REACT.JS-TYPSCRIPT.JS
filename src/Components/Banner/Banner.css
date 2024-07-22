@@ -1,3 +1,7 @@
+body{
+  color: rgb(0, 0, 0);
+}
+
 .bannerParentDiv {
   padding-top: 4em;
 }
@@ -7,6 +11,7 @@
   display: flex;
   padding: 10px 16px 10px 16px;
 }
+
 
 .bannerParentDiv .bannerChildDiv .menuBar span {
 }
@@ -24,10 +29,10 @@
 
 .bannerChildDiv .banner {
   position: relative;
-  width: 100vw;
+  width: 100%;
 }
 .bannerChildDiv .banner img{
-  width: 100vw;
+  width: 100%;
 }
 
 @media only screen and (max-width: 700px) {

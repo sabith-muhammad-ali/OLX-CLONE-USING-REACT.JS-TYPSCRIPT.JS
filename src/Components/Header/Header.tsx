@@ -1,17 +1,37 @@
-import React from 'react';
+import React, { useContext } from "react";
+import "./Header.css";
+import OlxLogo from "../../assets/OlxLogo";
+import Search from "../../assets/Search";
+import Arrow from "../../assets/Arrow";
+import SellButton from "../../assets/SellButton";
+import SellButtonPlus from "../../assets/SellButtonPlus";
+import { AuthContext, FirebaseContext } from "../../context/FirebaseContext";
+import { Link, useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
 
-import './Header.css';
-import OlxLogo from '../../assets/OlxLogo';
-import Search from '../../assets/Search';
-import Arrow from '../../assets/Arrow';
-import SellButton from '../../assets/SellButton';
-import SellButtonPlus from '../../assets/SellButtonPlus';
 function Header() {
+  const { user } = useContext(AuthContext);
+  const firebaseContext = useContext(FirebaseContext);
+  const navigate = useNavigate();
+
+  const handelSighOut = async () => {
+    if (firebaseContext) {
+      try {
+        await signOut(firebaseContext.auth);
+        navigate("/login");
+      } catch (error) {
+        console.log("sigh out error:", error);
+      }
+    }
+  };
+
   return (
     <div className="headerParentDiv">
       <div className="headerChildDiv">
         <div className="brandName">
-          <OlxLogo></OlxLogo>
+          <Link to={"/"}>
+          <OlxLogo />
+          </Link>
         </div>
         <div className="placeSearch">
           <Search></Search>
@@ -29,20 +49,24 @@ function Header() {
             <Search color="#ffffff"></Search>
           </div>
         </div>
+        &nbsp;
         <div className="language">
           <span> ENGLISH </span>
           <Arrow></Arrow>
         </div>
+        &nbsp;
         <div className="loginPage">
-          <span>Login</span>
+          <span>{user ? user.displayName : "Login"}</span>
           <hr />
         </div>
-
+        &nbsp;&nbsp;{user && <span onClick={handelSighOut}>Logout</span>}
         <div className="sellMenu">
           <SellButton></SellButton>
           <div className="sellMenuContent">
             <SellButtonPlus></SellButtonPlus>
-            <span>SELL</span>
+            <Link to="/create">
+              <span>SELL</span>
+            </Link>
           </div>
         </div>
       </div>

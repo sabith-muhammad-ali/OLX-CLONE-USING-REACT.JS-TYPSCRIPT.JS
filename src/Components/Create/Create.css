@@ -1,32 +1,45 @@
 .centerDiv {
-    border: 1px solid black;
-    width: max-content;
-    padding: 50px;
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 6px;
-  }
-  .input {
-    border-top-color: transparent;
-    border-left-color: transparent;
-    border-right-color: transparent;
-    outline-color: transparent;
-  }
-  
-  .uploadBtn {
-    margin-top: 30px;
-    width: 100%;
-    height: 48px;
-    /* border-color: transparent; */
-    background-color: #002f34;
-    color: whitesmoke;
-    font-weight: 900;
-  }
-  .uploadBtn:hover {
-    background-color: white;
-    color: #002f34;
-    border: 2px solid #002f34;
-  }
-  
+  border: 1px solid black;
+  width: max-content;
+  padding: 50px;
+  position: absolute;
+  top: 50%;  /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  background-color: white; /* Optional: if you want a white background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: for a shadow effect */
+}
+
+.input {
+  border: 1px solid lightgray; 
+  background-color: #f0f0f0; 
+  color: black; 
+  padding: 8px; 
+  border-radius: 4px; 
+  width: 100%; /* Ensure input fields take the full width of their container */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.uploadBtn {
+  margin-top: 30px;
+  width: 100%;
+  height: 48px;
+  background-color: #002f34;
+  color: whitesmoke;
+  font-weight: 900;
+  border: none; /* Reset border to ensure it doesn't interfere */
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+}
+
+.uploadBtn:hover {
+  background-color: white;
+  color: #002f34;
+  border: 2px solid #002f34;
+}
+
+.error {
+  color: red;
+  margin-bottom: 5px;
+  font-size: 12px;
+}

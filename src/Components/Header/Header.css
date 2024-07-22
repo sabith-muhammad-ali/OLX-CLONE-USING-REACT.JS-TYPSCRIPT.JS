@@ -2,12 +2,17 @@
   padding: 10px;
   background-color: whitesmoke;
   position: fixed;
+  top: 0; 
+  left: 0;
   width: 100vw;
   z-index: 999;
+  display: flex;
+  justify-content: center; 
 }
 
 .headerChildDiv {
   width: 100%;
+  max-width: 1200px; 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,7 +29,7 @@
   background-color: white;
 }
 
-.placeSearch ::selection {
+.placeSearch::selection {
   border-color: #23e5db;
   outline-color: #23e5db;
 }
@@ -42,8 +47,6 @@
   display: flex;
   align-items: center;
   background-color: white;
-  display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 
@@ -85,8 +88,6 @@
 }
 
 .language span {
-  /* justify-content: space-between;
-  align-items: center; */
   font-size: 15px;
   white-space: normal;
   text-overflow: ellipsis;
@@ -94,8 +95,7 @@
   margin-right: 5px;
 }
 
-.language svg {
-}
+.language svg {}
 
 .span {
   text-decoration: none;
@@ -112,7 +112,7 @@
   height: 2px;
 }
 
-.loginPage a{
+.loginPage a {
   text-decoration: none;
 }
 
@@ -136,6 +136,7 @@
 .sellMenu .right {
   fill: #3a77ff;
 }
+
 .sellMenu .sellMenuContent {
   display: flex;
   position: absolute;
@@ -148,9 +149,6 @@
   color: #002f34;
 }
 
-/* .sellMenu .sellMenuContent svg {
-  align-items: center;
-} */
 .sellMenu .sellMenuContent span {
   margin-left: 5px;
 }
